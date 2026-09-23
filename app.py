@@ -160,9 +160,7 @@ VERSION_MAP = {
 @app.route("/", methods=["GET"])
 def health():
     return jsonify({
-        "status": "ok",
-        "message": "LLM gateway is running",
-        "endpoints": {f"/go/{v}": label for v, (label, _, _) in VERSION_MAP.items()},
+        "status": "ok"
     })
 
 
