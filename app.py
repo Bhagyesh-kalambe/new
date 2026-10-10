@@ -172,7 +172,7 @@ def make_endpoint(model_label, provider_fn, api_key):
             return jsonify({"error": "Request body must include a 'q' field."}), 400
         try:
             answer = provider_fn(api_key, question)
-            return jsonify({"model": model_label, "answer": answer})
+            return jsonify({"model": model_label, "a": answer})
         except Exception as e:
             return jsonify({"model": model_label, "error": extract_error_detail(e)}), 500
     return endpoint
